@@ -13,13 +13,15 @@ def add_header(csv, header):
 def get_stats(address):
     contract = Contract.from_explorer(address)
     return {
-        # POOL PARAMETERS
+  
         # FEE METRICS
         "fee_pct": contract.fee() / 1e8,
         "mid_fee_pct": contract.mid_fee() / 1e8,
         "out_fee_pct": contract.out_fee() / 1e8,
         "admin_fee_pct": contract.admin_fee() / 1e8,
         "fee_gamma_unscaled": contract.fee_gamma() / 1e18,
+        
+        # OTHER POOL PARAMETERS
         # "ma_half_time": contract.ma_half_time(),
         # "adjustment_step": contract.adjustment_step(),
         # "allowed_extra_profit": contract.allowed_extra_profit(),
